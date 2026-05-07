@@ -1,3 +1,45 @@
 body {
-    margin: 0;
-} 
+  margin: 0;
+  color: #ffffff;
+  font-family: "Smythe", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Container Size */
+#container {
+  display: flex;
+  margin: auto;
+  height: 1160px;
+  width: 600px;
+  background-color: rgb(228, 228, 228);
+}
+
+/* Header */
+header {
+  width: 600px;
+  height: 167px;
+  background-image: url("/img/Burger-Header.png");
+}
+
+#header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 40px 0 0px 40px;
+}
+
+#header-title {
+  font-size: 39px;
+  font-weight: 100;
+  margin:0 0 19px 0;
+  line-height: .7;
+  box-sizing: border-box;
+}
+
+#header-subtitle {
+  font-size: 22px;
+  font-weight: 100;
+  margin: 0;
+  line-height: .6;
+}
