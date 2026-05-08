@@ -1,18 +1,21 @@
 body {
   margin: 0;
+  padding: 0;
   color: #ffffff;
   font-family: "Smythe", system-ui;
   font-weight: 400;
   font-style: normal;
+  display: flex;
 }
 
 /* Container Size */
 #container {
   display: flex;
+  flex-direction: column;
   margin: auto;
   height: 1160px;
   width: 600px;
-  background-color: rgb(228, 228, 228);
+  border: 1px solid #000000;
 }
 
 /* Header */
@@ -32,8 +35,8 @@ header {
 #header-title {
   font-size: 39px;
   font-weight: 100;
-  margin:0 0 19px 0;
-  line-height: .7;
+  margin: 0 0 19px 0;
+  line-height: 0.7;
   box-sizing: border-box;
 }
 
@@ -41,5 +44,76 @@ header {
   font-size: 22px;
   font-weight: 100;
   margin: 0;
-  line-height: .6;
+  line-height: 0.6;
+}
+
+/* Menu */
+#menu {
+  display: flex;
+  flex-direction: column;
+  margin: 22px 46px 0px 46px;
+  color: #000000;
+
+}
+
+.menu-item-container {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  border-bottom: 1px solid #dedede;
+  padding:45px 0 50px 0 ;
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-emoji {
+  font-size: 78px;
+}
+
+.menu-text-container {
+  margin: 0 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+
+.menu-item-name {
+  font-size: 28px;
+  /* margin: 7px 0 6px 0; */
+  margin: 0;
+}
+.menu-item-description {
+  font-size: 16px;
+  margin: 0;
+  color: #8b8b8b;
+  /* margin: 0px 0 6px 0; */
+  margin: 0;
+}
+.menu-item-price {
+  font-size: 20px;
+  margin: 0;
+}
+
+.add-item {
+  border: 1.5px solid #dedede;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.add-item-emoji {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 200;
+  color: #3c3c3c;
+  margin-bottom: 4px;
 }
