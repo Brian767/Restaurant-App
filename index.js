@@ -1,5 +1,6 @@
 import { menuArray } from "./data.js";
 
+
 const menuEl = document.getElementById("menu");
 const addItemBtns = document.getElementsByClassName("add-item-btn");
 
@@ -9,7 +10,25 @@ document.addEventListener("click", function (e) {
   if (e.target.dataset.add) {
     addToCart(e.target.dataset.add);
   }
+  else if (e.target.dataset.remove) {
+    removeFromCart(e.target.dataset.remove);
+  }
 });
+
+function removeFromCart(cartItemId) {
+   for(let item of cartItemsArr) {
+    console.log(item.id.toString(), cartItemId);
+    if(item.id.toString() === cartItemId) {
+      cartItemsArr.splice(cartItemsArr.indexOf(item), 1);
+      break;
+    }
+   }
+
+    updateTotalPrice();
+    render();
+}
+
+
 
 function updateTotalPrice() {
   const totalPrice = cartItemsArr.reduce(function (acc, cartItem) {
@@ -21,7 +40,6 @@ function updateTotalPrice() {
 
 function addToCart(menuItemId) {
   const targetMenuItemObj = menuArray.filter(function (menuItem) {
-    console.log(menuItem.id.toString(), menuItemId);
     return menuItem.id.toString() === menuItemId;
   })[0];
   cartItemsArr.push(targetMenuItemObj);
@@ -37,7 +55,7 @@ function getCartItemsHtml() {
             <div class="cart-items-container">
               <div class="cart-items">
                 <p class="menu-item-name">${cartItem.name}</p>
-                <button class="cart-remove-btn">remove</button>
+                <button class="cart-remove-btn" data-remove="${cartItem.id}">remove</button>
               </div>
               <p class="menu-item-price">$${cartItem.price}</p>
             </div>`;

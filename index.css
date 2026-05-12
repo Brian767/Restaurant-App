@@ -160,6 +160,11 @@ header {
   padding: 0;
   /* margin: auto 0; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+
+.cart-remove-btn:hover {
+  text-decoration: underline;
 }
 
 /* Line Break */
