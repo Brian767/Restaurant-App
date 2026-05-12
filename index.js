@@ -1,50 +1,57 @@
 import { menuArray } from "./data.js";
 
-
 const menuEl = document.getElementById("menu");
 const addItemBtns = document.getElementsByClassName("add-item-btn");
 const completeOrderBtn = document.getElementById("complete-order-btn");
 const payBtn = document.getElementById("pay-btn");
 const paymentForm = document.getElementById("payment-form");
+const orderMessage = document.getElementById("order-message");
 
 let cartItemsArr = [];
 
 document.addEventListener("click", function (e) {
   if (e.target.dataset.add) {
     addToCart(e.target.dataset.add);
-  }
-  else if (e.target.dataset.remove) {
+  } else if (e.target.dataset.remove) {
     removeFromCart(e.target.dataset.remove);
-  }
-  else if (e.target.id === "complete-order-btn") {
+  } else if (e.target.id === "complete-order-btn") {
     document.getElementById("payment-modal").style.display = "flex";
   }
 });
 
 paymentForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    paymentForm.reset();
-    cartItemsArr = [];
-    updateTotalPrice();
-    render();
-    document.getElementById("payment-modal").style.display = "none";
+  e.preventDefault();
+
+  const formData = new FormData(paymentForm);
+  const name = formData.get("card-name");
+  
+
+  document.getElementById("order-text").innerHTML = `Thanks, ${name}! Your order is on its way!`;
+  orderMessage.style.display = "flex";
+
+  setTimeout(function () {
+    orderMessage.style.display = "none";
+  }, 8000);
+
+  paymentForm.reset();
+  cartItemsArr = [];
+  updateTotalPrice();
+  render();
+  document.getElementById("payment-modal").style.display = "none";
 });
 
-
 function removeFromCart(cartItemId) {
-   for(let item of cartItemsArr) {
+  for (let item of cartItemsArr) {
     console.log(item.id.toString(), cartItemId);
-    if(item.id.toString() === cartItemId) {
+    if (item.id.toString() === cartItemId) {
       cartItemsArr.splice(cartItemsArr.indexOf(item), 1);
       break;
     }
-   }
+  }
 
-    updateTotalPrice();
-    render();
+  updateTotalPrice();
+  render();
 }
-
-
 
 function updateTotalPrice() {
   const totalPrice = cartItemsArr.reduce(function (acc, cartItem) {
@@ -59,7 +66,7 @@ function addToCart(menuItemId) {
     return menuItem.id.toString() === menuItemId;
   })[0];
   cartItemsArr.push(targetMenuItemObj);
-
+  orderMessage.style.display = "none";
   updateTotalPrice();
   render();
 }
@@ -106,8 +113,7 @@ function render() {
   if (cartItemsArr.length > 0) {
     document.getElementById("cart").style.display = "flex";
     document.getElementById("cart-html").innerHTML = getCartItemsHtml();
-  }
-  else {
+  } else {
     document.getElementById("cart").style.display = "none";
   }
 }

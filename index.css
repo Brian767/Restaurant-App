@@ -251,18 +251,32 @@ header {
   padding: 24px 0 24px 22px;
 }
 
-#pay-btn{
+#pay-btn {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
-   background-color: #16DB99;
-   border: none;
-   color: #ffffff;
-   border-radius: 4px;
-   padding: 24px 0;
-   margin-top: 22px;
+  background-color: #16db99;
+  border: none;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 24px 0;
+  margin-top: 22px;
 }
 
 #pay-btn:hover {
   background-color: #12a06c;
   cursor: pointer;
+}
+
+#order-message {
+  display: none;
+  font-size: 28px;
+  color: #000000;
+  background-color: #ecfdf5;
+  margin: 45px 46px 200px 46px;
+}
+
+#order-message p {
+  padding:  51px 62px ;
+  color: 065F46;
+  margin: auto;
 }
