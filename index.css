@@ -13,7 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
-  height: 1160px;
   width: 600px;
   border: 1px solid #000000;
 }
@@ -53,7 +52,6 @@ header {
   flex-direction: column;
   margin: 22px 46px 0px 46px;
   color: #000000;
-
 }
 
 .menu-item-container {
@@ -62,7 +60,7 @@ header {
 
   justify-content: space-between;
   border-bottom: 1px solid #dedede;
-  padding:45px 0 50px 0 ;
+  padding: 45px 0 50px 0;
   width: 100%;
 }
 
@@ -80,7 +78,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
 }
 
 .menu-item-name {
@@ -100,7 +97,8 @@ header {
   margin: 0;
 }
 
-.add-item {
+.add-item-btn {
+  background: none;
   border: 1.5px solid #dedede;
   border-radius: 50%;
   width: 50px;
@@ -109,11 +107,88 @@ header {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-}
-.add-item-emoji {
   font-family: "Inter", sans-serif;
   font-size: 32px;
   font-weight: 200;
   color: #3c3c3c;
-  margin-bottom: 4px;
+
+  padding-bottom: 4px;
+}
+
+.add-item-btn:hover {
+  background-color: #dedede;
+  cursor: pointer;
+}
+
+/* Cart Items */
+#cart {
+  display: none;
+  flex-direction: column;
+  margin: 45px 46px 53px 46px;
+  color: #000000;
+}
+
+#cart-html {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#your-order {
+  font-size: 28px;
+  margin: 0 auto 56px auto;
+}
+
+.cart-items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+}
+
+.cart-remove-btn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #bbbbbb;
+  cursor: pointer;
+  padding: 0;
+  /* margin: auto 0; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Line Break */
+.line-break {
+  border: none;
+  border-bottom: 2px solid #393333;
+  margin: 20px 0 10px 0;
+}
+
+.total-price-text {
+  font-size: 28px;
+
+  margin: 0;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#complete-order-btn {
+  background-color: #16db99;
+  color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  border-radius: 3px;
+  padding: 18px 0;
+  font-size: 16px;
+  margin-top: 50px;
 }

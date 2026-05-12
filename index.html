@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restauranr App</title>
+    <title>Restaurant App</title>
     <link rel="stylesheet" href="index.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,6 +29,19 @@
       </header>
       <main>
         <section id="menu"></section>
+        <section id="cart">
+          <h2 id="your-order">Your Order</h2>
+          <div id="cart-html">
+          </div>
+
+          <hr class="line-break" />
+          <div class="container-flex">
+            <p class="total-price-text">Total Price:</p>
+            <p id="total-price" class="menu-item-price"></p>
+          </div>
+
+          <button id="complete-order-btn">Complete Order</button>
+        </section>
       </main>
     </div>
 
