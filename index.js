@@ -3,6 +3,9 @@ import { menuArray } from "./data.js";
 
 const menuEl = document.getElementById("menu");
 const addItemBtns = document.getElementsByClassName("add-item-btn");
+const completeOrderBtn = document.getElementById("complete-order-btn");
+const payBtn = document.getElementById("pay-btn");
+const paymentForm = document.getElementById("payment-form");
 
 let cartItemsArr = [];
 
@@ -13,7 +16,20 @@ document.addEventListener("click", function (e) {
   else if (e.target.dataset.remove) {
     removeFromCart(e.target.dataset.remove);
   }
+  else if (e.target.id === "complete-order-btn") {
+    document.getElementById("payment-modal").style.display = "flex";
+  }
 });
+
+paymentForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    paymentForm.reset();
+    cartItemsArr = [];
+    updateTotalPrice();
+    render();
+    document.getElementById("payment-modal").style.display = "none";
+});
+
 
 function removeFromCart(cartItemId) {
    for(let item of cartItemsArr) {
